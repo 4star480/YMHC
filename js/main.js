@@ -69,56 +69,6 @@
     });
   });
 
-  // Multi-step form
-  const form = document.getElementById("booking-form");
-  if (form) {
-    const steps = form.querySelectorAll(".form-step");
-    const pills = document.querySelectorAll(".step-pill");
-    const success = document.querySelector(".form-success");
-    let current = 0;
-
-    const showStep = (n) => {
-      current = n;
-      steps.forEach((s, i) => s.classList.toggle("active", i === n));
-      pills.forEach((p, i) => p.classList.toggle("active", i <= n));
-    };
-
-    form.querySelectorAll("[data-next]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const inputs = steps[current].querySelectorAll("[required]");
-        for (const input of inputs) {
-          if (!input.checkValidity()) {
-            input.reportValidity();
-            return;
-          }
-        }
-        if (current < steps.length - 1) showStep(current + 1);
-      });
-    });
-
-    form.querySelectorAll("[data-prev]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (current > 0) showStep(current - 1);
-      });
-    });
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      form.style.display = "none";
-      document.querySelector(".form-steps").style.display = "none";
-      success.classList.add("show");
-      const data = new FormData(form);
-      const subject = encodeURIComponent("YMHC — New request from website");
-      const body = encodeURIComponent(
-        [...data.entries()].map(([k, v]) => `${k}: ${v}`).join("\n")
-      );
-      const mail = document.querySelector("[data-fallback-mail]");
-      if (mail) {
-        mail.href = `mailto:ymhc.africa@gmail.com?subject=${subject}&body=${body}`;
-      }
-    });
-  }
-
   // Modals
   document.querySelectorAll("[data-modal]").forEach((trigger) => {
     trigger.addEventListener("click", (e) => {

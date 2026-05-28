@@ -27,7 +27,7 @@ Then open http://localhost:8080
 
 - **Email:** ymhc.africa@gmail.com
 - **Phone:** +256 782 289 001
-- **Location:** Kampala, Uganda
+- **Location:** Head office in Uganda, with offices across Africa
 
 ## Before going live
 
