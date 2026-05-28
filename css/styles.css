@@ -352,8 +352,11 @@ a {
   display: none;
 }
 
-.hero-bg,
 .hero-mobile-panel {
+  display: none;
+}
+
+.hero-mobile-logo-wrap {
   display: none;
 }
 
@@ -1031,6 +1034,10 @@ section {
     background: var(--white);
   }
 
+  .nav-actions > .btn {
+    display: none;
+  }
+
   .mobile-nav {
     background: var(--hero-header);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -1045,67 +1052,51 @@ section {
     min-height: calc(100dvh - 56px);
     min-height: calc(100svh - 56px);
     display: flex;
-    align-items: flex-end;
+    align-items: stretch;
     justify-content: center;
-    background: var(--hero-header);
-  }
-
-  .hero-bg {
-    display: block;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .hero-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 35%;
-  }
-
-  .hero-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(26, 37, 44, 0.35) 0%,
-      rgba(26, 37, 44, 0.5) 45%,
-      rgba(26, 37, 44, 0.72) 100%
-    );
+    background: linear-gradient(165deg, #1f2d36 0%, var(--hero-header) 55%, #141c22 100%);
   }
 
   .hero-mobile-panel {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: 2.5rem 1.25rem 2.75rem;
-    text-align: center;
+    min-height: calc(100dvh - 56px);
+    min-height: calc(100svh - 56px);
+    padding: 1.5rem 1.25rem 2.5rem;
   }
 
-  .hero-mobile-title {
-    margin: 0 0 0.85rem;
-    font-family: var(--font);
-    font-size: clamp(1.35rem, 5.2vw, 1.75rem);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--white);
-    max-width: 16rem;
-    margin-inline: auto;
+  .hero-mobile-logo-wrap {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0 2rem;
   }
 
-  .hero-mobile-sub {
-    margin: 0 0 1.75rem;
-    font-size: clamp(0.95rem, 3.8vw, 1.05rem);
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 1.45;
+  .hero-mobile-logo {
+    width: min(82vw, 320px);
+    max-height: min(52vh, 360px);
+    height: auto;
+    object-fit: contain;
+    border-radius: 22px;
+    background: var(--white);
+    padding: clamp(0.85rem, 3vw, 1.25rem);
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
   }
 
   .hero-cta-stack {
+    width: 100%;
     max-width: 420px;
     margin-inline: auto;
+    flex-shrink: 0;
   }
 
   .hero-desktop-only {
@@ -1153,8 +1144,8 @@ section {
   .header-mobile-name {
     display: none;
   }
-  .hero-bg,
-  .hero-mobile-panel {
+  .hero-mobile-panel,
+  .hero-mobile-logo-wrap {
     display: none !important;
   }
   .hero-desktop-only {
