@@ -104,6 +104,7 @@ a {
   width: 52px;
   height: 52px;
   object-fit: contain;
+  border-radius: 10px;
 }
 
 .brand-text strong {
@@ -327,7 +328,8 @@ a {
   left: -10px;
   width: 92px;
   height: 92px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
   border-radius: 999px;
   border: 4px solid #fff;
   box-shadow: 0 10px 28px rgba(26, 77, 46, 0.25);
