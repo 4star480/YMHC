@@ -1091,7 +1091,7 @@ section {
     font-weight: 700;
     line-height: 1.2;
     color: var(--white);
-    max-width: 18ch;
+    max-width: 16rem;
     margin-inline: auto;
   }
 
