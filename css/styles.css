@@ -792,24 +792,6 @@ section {
   color: var(--muted);
 }
 
-/* Partners */
-.partners-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.partner-badge {
-  background: var(--white);
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--muted);
-  border: 1px dashed #c5d5ca;
-}
-
 /* Newsletter */
 .newsletter {
   background: linear-gradient(135deg, var(--green-700), var(--green-900));
