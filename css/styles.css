@@ -352,11 +352,8 @@ a {
   display: none;
 }
 
+.hero-mobile-bg,
 .hero-mobile-panel {
-  display: none;
-}
-
-.hero-mobile-logo-wrap {
   display: none;
 }
 
@@ -1048,55 +1045,60 @@ section {
   }
 
   .hero {
+    position: relative;
     padding: 0;
     min-height: calc(100dvh - 56px);
     min-height: calc(100svh - 56px);
     display: flex;
-    align-items: stretch;
+    align-items: flex-end;
     justify-content: center;
-    background: linear-gradient(165deg, #1f2d36 0%, var(--hero-header) 55%, #141c22 100%);
+    overflow: hidden;
+    background: var(--hero-header);
+  }
+
+  .hero-mobile-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-mobile-bg-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.08);
+  }
+
+  .hero-mobile-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 37, 44, 0.2) 0%,
+      rgba(26, 37, 44, 0.45) 50%,
+      rgba(26, 37, 44, 0.82) 100%
+    );
   }
 
   .hero-mobile-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: relative;
     z-index: 1;
     width: 100%;
     min-height: calc(100dvh - 56px);
     min-height: calc(100svh - 56px);
-    padding: 1.5rem 1.25rem 2.5rem;
-  }
-
-  .hero-mobile-logo-wrap {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem 0 2rem;
-  }
-
-  .hero-mobile-logo {
-    width: min(82vw, 320px);
-    max-height: min(52vh, 360px);
-    height: auto;
-    object-fit: contain;
-    border-radius: 22px;
-    background: var(--white);
-    padding: clamp(0.85rem, 3vw, 1.25rem);
-    box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.45),
-      0 0 0 1px rgba(255, 255, 255, 0.08);
+    padding: 0 1.25rem 2.5rem;
   }
 
   .hero-cta-stack {
     width: 100%;
     max-width: 420px;
     margin-inline: auto;
-    flex-shrink: 0;
   }
 
   .hero-desktop-only {
@@ -1144,8 +1146,8 @@ section {
   .header-mobile-name {
     display: none;
   }
-  .hero-mobile-panel,
-  .hero-mobile-logo-wrap {
+  .hero-mobile-bg,
+  .hero-mobile-panel {
     display: none !important;
   }
   .hero-desktop-only {
