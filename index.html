@@ -22,10 +22,11 @@
       <a class="brand" href="#home">
         <img src="assets/ymhc-logo.jpeg" alt="YMHC logo" width="52" height="52" />
         <div class="brand-text">
-          <strong>YMHC</strong>
-          <span>Youth Mental Health Collaborative — Africa</span>
+          <strong class="brand-title">YMHC</strong>
+          <span class="brand-sub">Youth Mental Health Collaborative — Africa</span>
         </div>
       </a>
+      <p class="header-mobile-name">Youth Mental Health Collaborative</p>
       <nav class="nav-desktop" aria-label="Main">
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
@@ -35,7 +36,7 @@
       </nav>
       <div class="nav-actions">
         <a class="btn btn-ghost nav-desktop" href="#contact">Contact Us</a>
-        <a class="btn btn-primary" href="#" data-modal="modal-volunteer">Get Involved</a>
+        <a class="btn btn-primary nav-desktop" href="#" data-modal="modal-volunteer">Get Involved</a>
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -54,8 +55,31 @@
 
   <main id="main">
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          class="hero-bg-image remote-photo"
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
+          data-fallback-url="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80"
+          alt=""
+          width="1200"
+          height="800"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <div class="hero-mobile-panel">
+        <h1 class="hero-mobile-title">Empowering Minds Across Africa</h1>
+        <p class="hero-mobile-sub">There is no health without mental health.</p>
+        <div class="hero-cta hero-cta-stack">
+          <a class="btn btn-hero-primary" href="#programs">Learn More</a>
+          <a class="btn btn-hero-secondary" href="#" data-modal="modal-volunteer">Join Us</a>
+        </div>
+      </div>
+
+      <div class="container hero-grid hero-desktop-only">
+        <div class="hero-copy">
           <span class="hero-badge">Head office: Uganda · Offices across Africa</span>
           <h1>There is no health without mental health.</h1>
           <p class="hero-lead">
@@ -64,8 +88,8 @@
             — so young people can thrive, not just survive.
           </p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">Partner with us</a>
-            <a class="btn btn-outline" href="#programs">Explore our work</a>
+            <a class="btn btn-primary" href="#programs">Learn More</a>
+            <a class="btn btn-outline" href="#" data-modal="modal-volunteer">Join Us</a>
           </div>
           <div class="hero-stats">
             <div class="stat-card">
@@ -86,13 +110,12 @@
           <div class="hero-blob" aria-hidden="true"></div>
           <img
             class="hero-photo remote-photo"
-            src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80"
-            data-fallback-url="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=1600&q=80"
-            alt="African youth standing together in community support setting"
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80"
+            data-fallback-url="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1400&q=80"
+            alt="African youth in a supportive community setting"
             width="620"
             height="420"
             loading="eager"
-            fetchpriority="high"
           />
           <img
             class="hero-logo-badge"

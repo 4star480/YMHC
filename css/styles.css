@@ -13,6 +13,8 @@
   --radius: 14px;
   --font: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-display: "Georgia", "Times New Roman", serif;
+  --hero-header: #1a252c;
+  --hero-cta-red: #e32d36;
 }
 
 *,
@@ -344,6 +346,52 @@ a {
   z-index: -1;
   top: 10%;
   right: 5%;
+}
+
+.header-mobile-name {
+  display: none;
+}
+
+.hero-bg,
+.hero-mobile-panel {
+  display: none;
+}
+
+.hero-desktop-only {
+  display: none;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.95rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-hero-primary {
+  background: var(--hero-cta-red);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(227, 45, 54, 0.35);
+}
+
+.btn-hero-secondary {
+  background: var(--hero-header);
+  color: var(--white);
+}
+
+.hero-cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 /* Sections */
@@ -939,36 +987,129 @@ section {
   .container {
     width: min(1140px, 94vw);
   }
-  .brand-text span {
+
+  .crisis-bar {
     display: none;
   }
+
+  .site-header {
+    background: var(--hero-header);
+    border-bottom: none;
+    backdrop-filter: none;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .brand img {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  .header-mobile-name {
+    display: block;
+    margin: 0;
+    text-align: center;
+    font-size: clamp(0.78rem, 3.2vw, 0.95rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    padding: 0 0.25rem;
+  }
+
+  .menu-toggle span {
+    background: var(--white);
+  }
+
+  .mobile-nav {
+    background: var(--hero-header);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .mobile-nav a {
+    color: var(--white);
+  }
+
   .hero {
-    padding: 2.8rem 0 3.4rem;
+    padding: 0;
+    min-height: calc(100dvh - 56px);
+    min-height: calc(100svh - 56px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: var(--hero-header);
   }
-  .hero h1 {
-    font-size: 1.85rem;
+
+  .hero-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
   }
-  .hero-lead {
-    font-size: 1rem;
-  }
-  .hero-cta {
-    gap: 0.6rem;
-  }
-  .hero-cta .btn {
+
+  .hero-bg-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
   }
-  .hero-stats {
-    grid-template-columns: 1fr;
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 37, 44, 0.35) 0%,
+      rgba(26, 37, 44, 0.5) 45%,
+      rgba(26, 37, 44, 0.72) 100%
+    );
   }
-  .hero-photo {
-    min-height: 220px;
+
+  .hero-mobile-panel {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 2.5rem 1.25rem 2.75rem;
+    text-align: center;
   }
-  .hero-logo-badge {
-    width: 72px;
-    height: 72px;
-    left: 8px;
-    bottom: -10px;
+
+  .hero-mobile-title {
+    margin: 0 0 0.85rem;
+    font-family: var(--font);
+    font-size: clamp(1.65rem, 6.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
   }
+
+  .hero-mobile-sub {
+    margin: 0 0 1.75rem;
+    font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.45;
+  }
+
+  .hero-cta-stack {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .hero-desktop-only {
+    display: none !important;
+  }
+
   section {
     padding: 3.2rem 0;
   }
@@ -1006,6 +1147,16 @@ section {
   }
   .menu-toggle {
     display: none;
+  }
+  .header-mobile-name {
+    display: none;
+  }
+  .hero-bg,
+  .hero-mobile-panel {
+    display: none !important;
+  }
+  .hero-desktop-only {
+    display: grid !important;
   }
   .hero-grid {
     grid-template-columns: 1fr 1fr;
